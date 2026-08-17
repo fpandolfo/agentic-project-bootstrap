@@ -7,3 +7,10 @@ updates:
     groups:
       github-actions:
         patterns: ["*"]
+  - package-ecosystem: github-actions
+    directory: /src/agentic_bootstrap/packs/github/files
+    schedule:
+      interval: monthly
+    groups:
+      generated-github-actions:
+        patterns: ["*"]
