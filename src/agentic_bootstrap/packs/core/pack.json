@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "name": "core",
+  "description": "Canonical owners, delivery workflow, context checks and project templates.",
+  "requires": []
+}

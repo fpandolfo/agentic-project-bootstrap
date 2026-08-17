@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "name": "codex",
+  "description": "Read-only Codex specialist agents for exploration, research and review.",
+  "requires": ["core", "generic-agent"]
+}

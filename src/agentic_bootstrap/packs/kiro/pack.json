@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "name": "kiro",
+  "description": "Thin Kiro steering and skill adapters routed to canonical owners.",
+  "requires": ["core", "generic-agent"]
+}

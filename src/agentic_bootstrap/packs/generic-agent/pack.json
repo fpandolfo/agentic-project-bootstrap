@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "name": "generic-agent",
+  "description": "Portable Agent Skills that do not depend on a specific player.",
+  "requires": ["core"]
+}

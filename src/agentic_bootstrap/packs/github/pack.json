@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "name": "github",
+  "description": "GitHub issue/PR templates and a least-privilege bootstrap validation workflow.",
+  "requires": ["core"]
+}

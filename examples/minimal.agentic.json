@@ -1,0 +1,20 @@
+{
+  "$schema": "../agentic-project.schema.json",
+  "schemaVersion": 1,
+  "project": {
+    "name": "Example Product",
+    "slug": "example-product",
+    "description": "A synthetic product used to demonstrate the bootstrap.",
+    "stack": "TBD — inspect and confirm the primary stack"
+  },
+  "packs": ["core", "generic-agent", "github"],
+  "quality": {
+    "commands": []
+  },
+  "humanGates": [
+    "product-behavior",
+    "secrets",
+    "destructive-actions",
+    "production-release"
+  ]
+}
