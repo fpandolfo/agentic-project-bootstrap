@@ -4,18 +4,20 @@ Operational entrypoint for humans and AI agents working on Agentic Project Boots
 
 ## Objective
 
-Build a repository-native, player-agnostic bootstrap that makes agent-assisted
-projects auditable, portable and safe to continue from a clean context.
+Build a portable, player-agnostic guidance pack that helps any capable coding
+agent discover, structure, document and evolve a project with the human as
+product owner and decision authority.
 
-The public interface stays small: manifest, plan, explicit apply and verify.
-Complexity belongs behind those deterministic contracts, not in an interactive
-wizard or a hosted control plane.
+The primary public interface is `START_HERE.md`, the capability catalog and
+mode-specific playbooks. The deterministic CLI is optional plumbing for users
+who want reviewed file application; it is not required for agent-led adoption.
 
 ## First activation
 
 1. Read this file and `docs/PROJECT_INDEX.md`.
 2. Inspect `git status --short`.
-3. Classify the work as CLI/core, pack/template, docs/community, security, or release.
+3. Classify the work as agent experience, discovery/tooling, CLI/core,
+   pack/template, docs/community, security, or release.
 4. Read only the canonical owners routed by the project index.
 5. For meaningful behavior, map MVP, non-goals, unhappy path, edge cases and validation.
 6. Run focused tests during implementation and `python tools/prepare_delivery.py` before closeout.
@@ -37,6 +39,14 @@ wizard or a hosted control plane.
 1. `docs/contexts/ARCHITECTURE.md`
 2. `src/agentic_bootstrap/`
 3. `tests/test_cli.py`
+
+### Agent-first onboarding or discovery
+
+1. `START_HERE.md`
+2. `CAPABILITIES.md`
+3. relevant file under `playbooks/`
+4. `docs/ops/AGENT_FIRST_ONBOARDING.md`
+5. discovery tests
 
 ### Packs, templates or player adapters
 
@@ -61,6 +71,8 @@ wizard or a hosted control plane.
 ## Invariants
 
 - No wizard, account, hosted service or model dependency is required.
+- Guidance proposes options; it does not silently become a final product or architecture decision.
+- Initial structural discovery reads no file contents, executes no target commands and follows no symlinks.
 - `core` never requires a player-specific pack.
 - Plans are immutable, fingerprinted and inspectable.
 - Apply requires explicit fingerprint approval.

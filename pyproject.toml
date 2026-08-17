@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "agentic-project-bootstrap"
-version = "0.2.0a1"
-description = "Repository-native, player-agnostic bootstrap for disciplined agentic development"
+version = "0.2.0a2"
+description = "Portable, player-agnostic guidance pack for disciplined agentic projects"
 readme = "README.md"
 requires-python = ">=3.11"
 license = { file = "LICENSE" }
@@ -37,6 +37,7 @@ agentic_bootstrap = [
   "packs/*/pack.json",
   "packs/core/files/.gitignore",
   "packs/core/files/*.md",
+  "packs/core/files/playbooks/*.md",
   "packs/core/files/docs/**/*.md",
   "packs/core/files/tools/*.py",
   "packs/generic-agent/files/.agents/skills/*/SKILL.md",

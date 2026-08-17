@@ -32,5 +32,8 @@ TBD.
 ## Human decisions still open
 - TBD.
 
+Keep facts, inferences, unknowns, proposals and accepted decisions distinct.
+Agent recommendations do not become business rules without human confirmation.
+
 ## Evidence / validation
 - TBD.

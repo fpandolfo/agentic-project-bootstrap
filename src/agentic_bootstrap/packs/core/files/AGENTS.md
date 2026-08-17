@@ -2,6 +2,9 @@
 
 Operational entrypoint for humans and AI agents working in `{{PROJECT_NAME}}`.
 
+For first-time discovery or when the correct workflow is unclear, start with
+`START_HERE.md` and choose one playbook before using this operational router.
+
 ## Objective
 
 Use the **minimum sufficient context** to reach the correct owner, make a safe change, validate proportionally, and leave the repository easier to resume than it was before.
@@ -11,14 +14,15 @@ Use the **minimum sufficient context** to reach the correct owner, make a safe c
 At the beginning of a clean-context task:
 
 1. read this `AGENTS.md`;
-2. read `docs/PROJECT_INDEX.md`;
-3. inspect `git status --short`;
-4. identify the active work item, if one exists;
-5. classify the task as product/discovery, implementation, bug/investigation, cross-cutting, architecture/security, or operational/docs/tooling;
-6. classify recommended reasoning effort as `low`, `medium` or `high`;
-7. open only the minimum canonical owners needed;
-8. compare work-item intent, repository docs, tests and actual code before editing;
-9. for meaningful new behavior, map:
+2. read `START_HERE.md` first when the project is new to the current agent;
+3. read `docs/PROJECT_INDEX.md`;
+4. inspect `git status --short`;
+5. identify the active work item, if one exists;
+6. classify the task as product/discovery, implementation, bug/investigation, cross-cutting, architecture/security, or operational/docs/tooling;
+7. classify recommended reasoning effort as `low`, `medium` or `high`;
+8. open only the minimum canonical owners needed;
+9. compare work-item intent, repository docs, tests and actual code before editing;
+10. for meaningful new behavior, map:
    - problem/outcome;
    - hypothesis;
    - MVP;
@@ -28,7 +32,7 @@ At the beginning of a clean-context task:
    - relevant edge cases;
    - owners touched;
    - validation;
-10. do not turn an unresolved product or architecture question into code merely because implementation is possible.
+11. do not turn an unresolved product or architecture question into code merely because implementation is possible.
 
 ## Trust order
 
@@ -109,6 +113,10 @@ Durable truth must live in `AGENTS.md`, canonical docs, ADRs, contracts/schemas,
 `.agents/skills/`, `.codex/` and `.kiro/` are adapters.
 
 Owner: `docs/ops/AGENT_ADAPTERS.md`.
+
+The universal onboarding contract is `START_HERE.md`. Guidance may propose a
+direction, but only explicit human acceptance turns a material proposal into a
+project decision.
 
 ## Official documentation rule
 

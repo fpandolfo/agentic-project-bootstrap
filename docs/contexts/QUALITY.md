@@ -14,6 +14,11 @@ python3 tools/prepare_delivery.py
 
 The alpha test suite must cover:
 
+- universal agent-first files in generated core projects;
+- empty and existing project mode discovery;
+- content-free discovery, ignored dependencies and skipped symlinks;
+- no absolute machine path or sensitive content in discovery output;
+- explicit-output-only discovery writes;
 - manifest creation and validation;
 - existing-repository stack inference;
 - pack dependency resolution;

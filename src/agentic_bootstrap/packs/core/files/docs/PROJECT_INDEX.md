@@ -39,6 +39,9 @@ Primary stack:
 
 | Area | Owner |
 |---|---|
+| First-time agent activation | `START_HERE.md` |
+| Capability menu | `CAPABILITIES.md` |
+| Mode playbooks | `playbooks/` |
 | Operational entrypoint | `AGENTS.md` |
 | Current state / navigation | `docs/PROJECT_INDEX.md` |
 | Product/problem | `docs/contexts/PRODUCT.md` |
@@ -48,6 +51,7 @@ Primary stack:
 | Delivery workflow | `docs/ops/DELIVERY_WORKFLOW.md` |
 | Context governance | `docs/ops/CONTEXT_GOVERNANCE.md` |
 | Agent/player adapters | `docs/ops/AGENT_ADAPTERS.md` |
+| Agent-first onboarding | `docs/ops/AGENT_FIRST_ONBOARDING.md` |
 | Official-docs policy | `docs/ops/OFFICIAL_DOCS_POLICY.md` |
 | Change impact | `docs/checklists/CHANGE_IMPACT.md` |
 | ADR history | `docs/adr/` |
@@ -55,6 +59,11 @@ Primary stack:
 Add domain-specific owners only when a real domain emerges.
 
 ## Read next
+
+### First discovery / uncertain workflow
+1. `START_HERE.md`
+2. `CAPABILITIES.md`
+3. one file under `playbooks/`
 
 ### Product / discovery
 1. `docs/contexts/PRODUCT.md`

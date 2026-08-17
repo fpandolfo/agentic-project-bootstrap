@@ -4,12 +4,16 @@ Canonical navigation and current-state owner for Agentic Project Bootstrap.
 
 ## Current state
 
-Status: public alpha foundation implemented locally.
+Status: public alpha; agent-first onboarding implemented on the active branch.
 
-Version: `0.2.0-alpha.1`.
+Version: `0.2.0-alpha.2`.
 
 Implemented:
 
+- universal agent-first entry point and capability catalog;
+- new, adopt and evolve playbooks;
+- copy/paste activation prompts;
+- content-free, read-only project discovery;
 - CLI commands `doctor`, `init`, `adopt`, `list-packs`, `plan`, `apply`, `verify`;
 - JSON manifest schema;
 - fingerprinted plans with explicit approval;
@@ -31,6 +35,12 @@ Not implemented:
 
 | Area | Owner |
 |---|---|
+| External agent entry point | `START_HERE.md` |
+| Capability selection | `CAPABILITIES.md` |
+| Activation prompts | `PROMPTS.md` |
+| Mode workflows | `playbooks/` |
+| Agent-first contract | `docs/ops/AGENT_FIRST_ONBOARDING.md` |
+| Structural discovery | `src/agentic_bootstrap/packs/core/files/tools/discover_project.py` |
 | Operational entrypoint | `AGENTS.md` |
 | Product and boundaries | `docs/contexts/PRODUCT.md` |
 | Architecture and safety model | `docs/contexts/ARCHITECTURE.md` |
@@ -42,11 +52,17 @@ Not implemented:
 | Plan contract | `src/agentic_bootstrap/planner.py` |
 | Apply safety | `src/agentic_bootstrap/apply.py` |
 | Verification | `src/agentic_bootstrap/verify.py` |
-| Executable behavior | `tests/test_cli.py` |
+| Executable behavior | `tests/test_cli.py`, `tests/test_discovery.py` |
 | Security reporting | `SECURITY.md` |
 | Contributions | `CONTRIBUTING.md` |
 
 ## Read next
+
+### Applying the suite to a project
+
+1. `START_HERE.md`
+2. `CAPABILITIES.md`
+3. one file under `playbooks/`
 
 ### CLI or behavior
 
@@ -67,6 +83,11 @@ Not implemented:
 3. `CHANGELOG.md`
 
 ## Current hotspots
+
+- Universal guidance is mirrored into the core pack; the delivery gate enforces
+  synchronization through `tools/sync_agent_first_pack.py`.
+- Structural discovery intentionally reads no contents, so stack and product
+  interpretation still requires selective agent inspection and human input.
 
 - Plans embed rendered text to make apply deterministic; large/binary pack
   support needs a separate artifact contract.

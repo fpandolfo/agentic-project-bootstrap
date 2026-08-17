@@ -1,23 +1,25 @@
 # Guia rápido
 
-Este pacote prepara um repositório para desenvolvimento **agent-first**, sem amarrar o projeto ao Codex, Kiro ou a uma stack específica.
+Este pack ajuda qualquer agente capaz a descobrir, estruturar, documentar e
+evoluir um projeto sem amarrá-lo a um player ou stack específica.
 
-## Uso
+## Comece aqui
 
-1. Descompacte na raiz do repositório.
-2. Inicialize os placeholders:
+1. Peça ao agente para ler `START_HERE.md`.
+2. Confirme `NEW_PROJECT`, `ADOPT_PROJECT` ou `EVOLVE_PROJECT`.
+3. Rode o discovery estrutural opcional:
 
-```bash
-python tools/init_bootstrap.py \
-  --name "Meu Projeto" \
-  --slug "meu-projeto" \
-  --description "Descrição curta do objetivo." \
-  --stack "TBD"
-```
+   ```bash
+   python3 tools/discover_project.py --target . --format markdown
+   ```
 
-3. Abra no Codex/Kiro.
-4. Envie ao agent o prompt sugerido em `BOOTSTRAP.md`.
-5. O agent deve fazer discovery antes de criar código de produto.
-6. Rode `python tools/context_check.py`.
+4. O agente deve separar fatos, inferências, desconhecidos e propostas.
+5. Responda às perguntas de produto e regras de negócio.
+6. Aprove decisões materiais antes da geração ou implementação.
+7. Rode `python3 tools/context_check.py` antes de encerrar a adoção.
 
-A estrutura existe para criar um sistema óbvio: owner canônico, leitura proporcional, pouco contexto e fechamento verificável. Remova ou una arquivos que deixarem de agregar valor.
+O pack é orientação, não decisão final. Crie somente contextos, diagramas, ADRs
+e tooling que resolvam uma necessidade real do projeto.
+
+Players específicos podem usar adapters, skills ou subagents opcionais. A
+verdade durável continua nos owners canônicos do repositório.

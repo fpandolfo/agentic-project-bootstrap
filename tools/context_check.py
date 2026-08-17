@@ -12,6 +12,9 @@ sys.path.insert(0, str(ROOT / "src"))
 from agentic_bootstrap.packs import discover_packs  # noqa: E402
 
 REQUIRED = [
+    "START_HERE.md",
+    "CAPABILITIES.md",
+    "PROMPTS.md",
     "AGENTS.md",
     "README.md",
     "README.pt-BR.md",
@@ -25,6 +28,10 @@ REQUIRED = [
     "docs/contexts/ARCHITECTURE.md",
     "docs/contexts/STACK.md",
     "docs/contexts/QUALITY.md",
+    "docs/ops/AGENT_FIRST_ONBOARDING.md",
+    "playbooks/NEW_PROJECT.md",
+    "playbooks/ADOPT_PROJECT.md",
+    "playbooks/EVOLVE_PROJECT.md",
 ]
 TOKEN_RE = re.compile(r"\{\{[A-Z0-9_]+\}\}")
 

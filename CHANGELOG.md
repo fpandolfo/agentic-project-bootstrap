@@ -2,6 +2,24 @@
 
 All notable changes are documented here.
 
+## 0.2.0-alpha.2 — 2026-08-17
+
+### Added
+
+- universal `START_HERE.md` entry point for any capable coding agent;
+- capability catalog, copy/paste prompts and new/adopt/evolve playbooks;
+- content-free, read-only structural discovery in JSON or Markdown;
+- explicit guidance for contexts, Mermaid diagrams, ADRs and human gates;
+- synchronized agent-first guidance inside the distributable core pack;
+- synthetic end-to-end example and discovery safety tests.
+
+### Changed
+
+- made `READ -> DISCOVER -> ASK -> PROPOSE -> APPROVE -> GENERATE -> OPERATE`
+  the primary product experience;
+- repositioned manifest/plan/apply/verify as optional deterministic plumbing;
+- clarified that agent proposals are guidance, not final product decisions.
+
 ## 0.2.0-alpha.1 — 2026-08-17
 
 ### Added

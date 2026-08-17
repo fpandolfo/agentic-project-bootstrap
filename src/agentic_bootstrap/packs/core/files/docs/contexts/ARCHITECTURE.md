@@ -16,6 +16,9 @@ TBD.
 ## Data flow
 TBD.
 
+Use `docs/templates/ARCHITECTURE_DIAGRAMS.md` only when a Mermaid view makes a
+real relationship, interaction or state transition easier to understand.
+
 ## External boundaries
 TBD.
 

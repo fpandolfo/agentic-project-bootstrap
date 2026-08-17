@@ -8,6 +8,7 @@ Thank you for helping make agentic development more portable and auditable.
 2. Open or select an issue for meaningful behavior.
 3. State the outcome, MVP, non-goals, unhappy path and validation.
 4. Keep durable behavior player-agnostic; adapters should stay thin.
+5. Preserve the distinction between facts, inferences, proposals and accepted decisions.
 
 ## Development
 
@@ -20,6 +21,16 @@ python3 -m venv .venv
 Changes to planning, apply, state or paths require adversarial tests. Pack
 changes require a generated-project test. Version-sensitive CI, packaging or
 security decisions must cite current official documentation in the pull request.
+
+Universal agent-first guidance is authored at the repository root and mirrored
+into the core pack. After changing `START_HERE.md`, `CAPABILITIES.md`, prompts,
+playbooks or the shared onboarding/templates, run:
+
+```bash
+python tools/sync_agent_first_pack.py --write
+```
+
+The delivery gate fails when the mirror drifts.
 
 ## Pull requests
 
