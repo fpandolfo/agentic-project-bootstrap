@@ -2,31 +2,57 @@
 
 ## Boundary
 
-Agentic Project Bootstrap is a deterministic repository transformation tool,
-not an agent runtime or hosted control plane.
+Agentic Project Bootstrap is a repository-readable guidance suite with optional
+deterministic tooling. It is not an agent runtime, model, IDE, wizard or hosted
+control plane.
 
 ```text
-manifest
-   |
-pack dependency resolution
-   |
-rendered desired files
-   |
-plan + fingerprint + conflict classification
-   |
-explicit approval
-   |
-preflight + atomic-per-file writes
-   |
-manifest/state + verify
+Human intent / existing project
+             |
+       START_HERE.md
+             |
+ content-free structural discovery
+             |
+ capability catalog + selected playbook
+             |
+ facts / inferences / unknowns / questions
+             |
+ proposals + human approval gates
+             |
+ tailored contexts / diagrams / ADRs / tooling
+             |
+       validated delivery loop
+```
+
+The optional applicator is a subordinate path:
+
+```text
+manifest -> rendered packs -> fingerprinted plan -> explicit apply -> verify
 ```
 
 ## Contracts
 
-### Manifest
+### Universal entry point
+
+`START_HERE.md` defines the player-independent activation sequence and routes an
+agent to the minimum relevant playbook.
+
+### Structural discovery
+
+`tools/discover_project.py` inventories file names and structure without reading
+contents, executing target commands or following symlinks. Its result is
+evidence for agent reasoning, not a product interpretation.
+
+### Guidance and playbooks
+
+`CAPABILITIES.md`, `PROMPTS.md`, `playbooks/` and canonical templates help an
+agent select useful artifacts. They are proposals, never mandatory final design.
+
+### Optional manifest
 
 Defines project metadata, selected packs, argv-only quality commands and human
-gates. Unknown product information remains explicit instead of being invented.
+gates when deterministic file application is desired. Unknown product
+information remains explicit instead of being invented.
 
 ### Pack
 
@@ -60,6 +86,9 @@ pre-existing collisions untouched and outside managed state.
 - no force overwrite;
 - no execution of project commands without `--run-quality`;
 - no binary pack files in the alpha.
+- no content reads or target command execution in initial structural discovery;
+- no mandatory player adapter or install step;
+- no automatic conversion of proposals into accepted decisions.
 
 ## Extension direction
 

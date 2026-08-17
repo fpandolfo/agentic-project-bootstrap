@@ -3,7 +3,7 @@
 This repository was seeded from `agentic-project-bootstrap-v0.1.0.zip` and is
 the canonical development home for the public tool from `0.2.0-alpha.1` onward.
 
-## Implemented in the first public slice
+## Implemented public foundation
 
 - zero-runtime-dependency Python CLI;
 - manifest creation and existing-repository adoption;
@@ -16,11 +16,23 @@ the canonical development home for the public tool from `0.2.0-alpha.1` onward.
 - core, generic-agent, GitHub, Codex and Kiro packs;
 - end-to-end tests and GitHub Actions.
 
+## Agent-first direction
+
+The primary experience is now:
+
+```text
+READ -> DISCOVER -> ASK -> PROPOSE -> APPROVE -> GENERATE -> OPERATE
+```
+
+Any capable agent starts at `START_HERE.md`, uses content-free structural
+discovery and reads only the relevant playbook. Installation is optional. The
+CLI remains available for deterministic, reviewable file application.
+
 ## Deliberately deferred
 
 - automatic upgrades and rollback;
 - third-party pack installation and trust policy;
-- stack packs;
+- stack-specific guidance packs;
 - release archive automation;
 - case-study site and media;
 - automatic merge of user-modified managed files.

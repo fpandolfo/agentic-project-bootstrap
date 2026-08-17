@@ -1,145 +1,148 @@
 # Agentic Project Bootstrap
 
-An open, repository-native bootstrap for disciplined agentic development.
+Point any capable coding agent at one file and give it a disciplined way to
+discover, structure, document and evolve a project with you.
 
-Agentic Project Bootstrap does not provide an IDE, model or hosted control
-plane. It prepares a new or existing repository so humans and capable coding
-agents can share durable context, explicit ownership, proportional validation
-and human approval gates without being locked to one player.
+No specific model, IDE, agent, account or installation is required. This is a
+portable guidance pack: it helps an agent find evidence, ask better questions,
+propose useful options and preserve durable project context. The human remains
+the product owner and decision authority.
 
-> Status: `0.2.0-alpha.1`. The plan/apply contract is functional and tested;
-> pack and upgrade APIs are still evolving.
+> Status: `0.2.0-alpha.2`. Agent-first onboarding and read-only discovery are
+> functional; guidance and optional pack/application contracts are still evolving.
 
 [Leia em português](README.pt-BR.md)
 
-## Why
+## Start in one prompt
 
-Agentic delivery needs more than prompts. A repository should make it easy to
-answer, from a clean context:
+Clone or download this repository, then tell your agent:
 
-- What is true now?
-- Who owns each durable decision?
-- What is the smallest coherent delivery slice?
-- What may an agent change automatically?
-- Which actions still require a human decision?
-- What evidence proves the work is complete?
+```text
+Read /path/to/agentic-project-bootstrap/START_HERE.md.
 
-This project turns those questions into versioned files and deterministic checks.
+Use ADOPT_PROJECT mode on my current repository. Start with read-only discovery.
+Do not implement or modify project files yet.
 
-## Safety model
+Separate facts, inferences, unknowns and proposals. Ask me for the product intent
+and business rules the repository cannot prove. Then propose the minimum useful
+contexts, diagrams, ADRs, tooling and delivery plan for my approval.
+```
+
+For a new idea, replace `ADOPT_PROJECT` with `NEW_PROJECT` and describe the
+desired outcome. More prompts are available in [PROMPTS.md](PROMPTS.md).
+
+## How it works
+
+```text
+READ -> DISCOVER -> ASK -> PROPOSE -> APPROVE -> GENERATE -> OPERATE
+```
+
+1. `START_HERE.md` establishes mode, boundaries and the first response contract.
+2. `tools/discover_project.py` creates a content-free structural inventory.
+3. `CAPABILITIES.md` shows what the suite can help produce.
+4. One playbook guides a new, existing or already-understood project.
+5. The agent inspects only relevant project evidence.
+6. The human resolves product, business, risk and acceptance decisions.
+7. The agent generates only the approved artifacts that are useful now.
+8. The repository retains context for the next clean agent session.
+
+The agent learns what is possible without loading this entire suite into context.
+
+## Safe structural discovery
+
+Python 3.11+ is needed only for the optional helper scripts.
+
+```bash
+python3 tools/discover_project.py \
+  --target /path/to/project \
+  --format markdown
+```
+
+The discovery tool inventories file names and structure. It does not read file
+contents, execute target commands, follow symlinks or traverse common dependency,
+cache and build directories. Sensitive candidates are reported by path only.
+
+JSON output is also available for agents that prefer structured evidence:
+
+```bash
+python3 tools/discover_project.py \
+  --target /path/to/project \
+  --format json \
+  --output /tmp/project-discovery.json
+```
+
+## Modes
+
+| Mode | Use when | Primary outcome |
+|---|---|---|
+| `NEW_PROJECT` | idea or empty repository | approved minimal product/technical foundation |
+| `ADOPT_PROJECT` | existing code, docs or delivery history | recovered truth and staged context adoption |
+| `EVOLVE_PROJECT` | understood project receiving change | coherent delivery slice with aligned context |
+
+See [playbooks/](playbooks/) for the exact sequences.
+
+## What the suite can guide
+
+- product and business-rule discovery;
+- canonical project contexts and ownership index;
+- architecture options and tradeoffs;
+- Mermaid component, sequence, state, data and timeline diagrams;
+- Architecture Decision Records;
+- feature slices, edge cases and human approval gates;
+- test, quality and delivery strategy;
+- context audits and clean-session handoffs;
+- player-specific skills or subagents as optional adapters.
+
+Templates live under [docs/templates/](docs/templates/). They are starting points,
+not a requirement to create every document.
+
+## Human and agent roles
+
+```text
+Human: purpose, priorities, business rules, material risk and acceptance
+Agent: discovery, options, implementation, tests, documentation and evidence
+Repository: canonical truth, decisions, guardrails and durable memory
+```
+
+An agent proposal is not a final decision. Unknown intent stays explicit until
+the appropriate human confirms it.
+
+## Optional deterministic application
+
+The Python CLI remains available for users who want exact pack rendering,
+conflict classification, fingerprint approval and managed-state verification:
 
 ```text
 manifest -> plan -> human fingerprint approval -> apply -> verify
 ```
 
-- `init` and `adopt` create manifests; they do not modify target repositories.
-- `plan` renders selected packs and classifies create/update/conflict operations.
-- `apply` refuses conflicts and requires the plan fingerprint.
-- target files changed after planning invalidate the apply.
-- user-modified managed files are never overwritten.
-- removed pack files become visible orphans and are never deleted automatically.
-- project quality commands run only with `verify --run-quality`.
-- the repository delivery gate scans tracked files for common privacy and secret leaks.
+It is optional plumbing, not the onboarding experience. See
+[docs/contexts/ARCHITECTURE.md](docs/contexts/ARCHITECTURE.md) and run
+`python3 agentic.py --help` when this control is useful.
 
-## Quick start without installation
+## Optional adapters
 
-Requirements: Python 3.11+ and Git.
+Built-in packs include the universal core, portable Agent Skills, GitHub
+templates/CI, Codex specialists and Kiro steering. Player-specific files are
+adapters; durable project truth remains in repository-owned docs, contracts,
+tests and tooling.
 
-```bash
-git clone https://github.com/fpandolfo/agentic-project-bootstrap.git
-cd agentic-project-bootstrap
+## Safety principles
 
-python3 agentic.py doctor
+- no hosted service, credentials or model dependency;
+- no content reads during initial structural discovery;
+- no silent overwrite or automatic deletion in the optional applicator;
+- no project command execution without explicit action;
+- no proposal silently promoted into an accepted product decision;
+- privacy and secret-like path scans in the public delivery gate.
 
-python3 agentic.py init \
-  --name "My Product" \
-  --description "A short, outcome-oriented description." \
-  --stack "TBD — discover before implementation" \
-  --packs core,generic-agent,github,codex \
-  --output /tmp/my-product.agentic.json
+## Project navigation
 
-python3 agentic.py plan \
-  --target /path/to/my-product \
-  --manifest /tmp/my-product.agentic.json \
-  --output /tmp/my-product.plan.json
-
-# Review the plan and use the fingerprint printed by the previous command.
-python3 agentic.py apply \
-  --plan /tmp/my-product.plan.json \
-  --approve <fingerprint>
-
-python3 agentic.py verify --target /path/to/my-product
-```
-
-For an existing repository:
-
-```bash
-python3 agentic.py adopt /path/to/existing-repo \
-  --description "What this product exists to accomplish." \
-  --output /tmp/existing.agentic.json
-
-python3 agentic.py plan \
-  --target /path/to/existing-repo \
-  --manifest /tmp/existing.agentic.json \
-  --preserve-existing \
-  --output /tmp/existing.plan.json
-```
-
-`--preserve-existing` is explicit because adoption commonly finds a README,
-`.gitignore` or agent instructions that already belong to the project. Preserved
-files remain untouched and unmanaged; the plan still shows every collision.
-
-## Install the CLI
-
-```bash
-python3 -m venv .venv
-.venv/bin/python -m pip install .
-.venv/bin/agentic doctor
-```
-
-The runtime has no third-party Python dependencies.
-
-## Built-in packs
-
-| Pack | Purpose |
-|---|---|
-| `core` | Canonical owners, context governance, delivery workflow and checks |
-| `generic-agent` | Portable Agent Skills |
-| `github` | Issue/PR templates and least-privilege context CI |
-| `codex` | Read-only specialist agents |
-| `kiro` | Thin steering and skill adapters |
-
-Run `python3 agentic.py list-packs` for the installed catalog.
-
-## Operating model
-
-```text
-Human: why, priorities, business rules, risk and acceptance
-Agent: discovery, implementation, tests, documentation and evidence
-Repository: contracts, canonical owners, guardrails and durable memory
-```
-
-The generated project follows `MAP -> IMPLEMENT -> VALIDATE -> CLOSE` and keeps
-player configuration as an adapter rather than the only owner of project truth.
-
-## Scope
-
-The alpha intentionally does not include:
-
-- an interactive wizard or GUI;
-- a hosted execution service;
-- authentication, billing or licensing infrastructure;
-- automatic deletion or three-way merge;
-- remote connectors or secret management;
-- stack-specific application scaffolding;
-- a stable third-party pack API or automatic upgrades.
-
-These boundaries keep the first public core inspectable and safe. Follow the
-roadmap in GitHub Issues for the next slices.
-
-## Contributing and security
-
-See [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md) and
-[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+- External entry point: [START_HERE.md](START_HERE.md)
+- Capability menu: [CAPABILITIES.md](CAPABILITIES.md)
+- Copy/paste prompts: [PROMPTS.md](PROMPTS.md)
+- Current state and owners: [docs/PROJECT_INDEX.md](docs/PROJECT_INDEX.md)
+- Contribution: [CONTRIBUTING.md](CONTRIBUTING.md)
+- Security: [SECURITY.md](SECURITY.md)
 
 Licensed under Apache-2.0.

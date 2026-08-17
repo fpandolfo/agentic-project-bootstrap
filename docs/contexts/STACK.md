@@ -2,9 +2,13 @@
 
 ## Runtime
 
+- Markdown guidance requires only a capable agent that can read repository files;
 - Python `>=3.11`;
 - standard library only at runtime;
 - Git for repository diagnostics and delivery checks.
+
+Python and Git are optional for guidance-only use. They are required only for
+the helper scripts, deterministic applicator and repository delivery checks.
 
 ## Packaging
 
@@ -12,6 +16,8 @@
 - console command: `agentic`;
 - direct source fallback: `python3 agentic.py`;
 - built-in text packs shipped as package data.
+- universal guidance mirrored into the core pack by
+  `tools/sync_agent_first_pack.py`.
 
 ## Validation
 

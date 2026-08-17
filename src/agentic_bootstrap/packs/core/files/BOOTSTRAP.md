@@ -4,16 +4,28 @@ This file is for the **first agent activation** of a new project.
 
 The bootstrap is complete when a clean-context agent can navigate the repository without relying on chat history.
 
-## Phase 0 — Confirm the applied manifest
+## Phase 0 — Activate the universal workflow
 
-The reviewed bootstrap declaration lives in `.agentic/manifest.json`. The
-fingerprinted applied state lives in `.agentic/state.json`.
+Read `START_HERE.md`, confirm `NEW_PROJECT` or `ADOPT_PROJECT` and run:
+
+```bash
+python3 tools/discover_project.py --target . --format markdown
+```
+
+Return a discovery brief and ask for missing product intent before writing
+project files.
+
+If deterministic packs were applied, the reviewed declaration lives in
+`.agentic/manifest.json` and state in `.agentic/state.json`. Those files are
+optional; their absence does not block agent-led use of the guidance.
+
+## Phase 1 — Confirm optional applied state
 
 Unknown information must remain explicit as `TBD`; do not invent it. Run
 `agentic verify --target .` when the `agentic` CLI is available, or use the
 standalone context check below.
 
-## Phase 1 — Discover before scaffolding
+## Phase 2 — Discover before scaffolding
 
 Determine whether the repository is greenfield, an existing codebase, a prototype or documentation-only discovery.
 
@@ -30,7 +42,7 @@ Before creating product code, establish:
 9. security/privacy constraints;
 10. human decisions still required.
 
-## Phase 2 — Fill the minimal canonical set
+## Phase 3 — Fill the minimal canonical set
 
 Required owners:
 
@@ -42,13 +54,13 @@ Required owners:
 
 Do **not** create extra docs just for symmetry.
 
-## Phase 3 — Define the first delivery slice
+## Phase 4 — Define the first delivery slice
 
 Use `docs/templates/FEATURE_SLICE.md`.
 
 At minimum define problem/outcome, hypothesis when relevant, MVP, non-goals, happy path, unhappy path, edge cases, owners, risks and validation.
 
-## Phase 4 — Implement
+## Phase 5 — Implement
 
 Only after the slice is understood:
 
@@ -57,7 +69,7 @@ Only after the slice is understood:
 - add tests closest to actual risk;
 - consult current official docs for changing external facts.
 
-## Phase 5 — Close
+## Phase 6 — Close
 
 1. run focused validation;
 2. run broader validation when proportional;
@@ -69,7 +81,7 @@ Only after the slice is understood:
 ## Suggested first prompt for any capable coding agent
 
 ```text
-Read AGENTS.md and BOOTSTRAP.md first.
+Read START_HERE.md and BOOTSTRAP.md first. Use NEW_PROJECT mode.
 
 Treat this as a clean-context bootstrap. Do not start implementing product code yet.
 

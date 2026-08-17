@@ -40,7 +40,7 @@ SENSITIVE_SUFFIXES = {
 def candidate_files() -> list[Path]:
     if (ROOT / ".git").exists():
         result = subprocess.run(
-            ["git", "ls-files", "-z"],
+            ["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z"],
             cwd=ROOT,
             check=True,
             capture_output=True,

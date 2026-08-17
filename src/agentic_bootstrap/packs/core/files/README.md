@@ -1,6 +1,6 @@
 # {{PROJECT_NAME}}
 
-> Bootstrapped with **Agentic Project Bootstrap v0.1.0**.
+> Guided by **Agentic Project Bootstrap**.
 
 {{PROJECT_DESCRIPTION}}
 
@@ -16,20 +16,28 @@ The goal is not documentation for its own sake. The goal is to let a clean-conte
 - How do I validate it?
 - What still requires a human decision?
 
-## Start here
+## Start here — any capable agent
 
-1. `AGENTS.md`
-2. `docs/PROJECT_INDEX.md`
-3. the canonical owner for the task
-4. relevant code/tests
+1. `START_HERE.md`
+2. choose `NEW_PROJECT`, `ADOPT_PROJECT` or `EVOLVE_PROJECT`;
+3. use the selected playbook;
+4. continue through `AGENTS.md` and `docs/PROJECT_INDEX.md` once the project is understood.
 
 If the repository has just been created, read `BOOTSTRAP.md` before implementation.
+
+The guidance is adaptable. It helps the agent discover evidence, ask useful
+questions and propose options; it does not impose final product or architecture
+decisions.
 
 ## Operating model
 
 Durable project truth belongs in code/tests, versioned contracts when present, canonical docs, ADRs and deterministic tooling.
 
 Player-specific surfaces such as `.codex/`, `.kiro/` and `.agents/skills/` are **adapters**, not the only owners of durable rules.
+
+No CLI installation is required to start. `tools/discover_project.py` provides a
+safe structural inventory. The optional `agentic` CLI can later apply reviewed
+packs through a fingerprinted plan when that control is useful.
 
 ## Current bootstrap assumptions
 

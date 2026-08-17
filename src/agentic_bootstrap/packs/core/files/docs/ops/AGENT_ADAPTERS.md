@@ -8,6 +8,8 @@ Player-specific skills, steering and subagents are **adapters**.
 
 Durable rules must not live only inside `.agents/skills/`, `.codex/agents/`, `.kiro/steering/`, `.kiro/skills/` or chat history.
 
+`START_HERE.md` is the universal player-independent activation contract.
+
 Durable owners belong in:
 
 - `AGENTS.md`;
@@ -51,5 +53,8 @@ Kiro files remain thin and route back to canonical repository owners.
 ## Generic Agent Skills
 
 `.agents/skills/` contains portable workflow guidance.
+
+The `agent-first-bootstrap` skill routes supported players into the universal
+new/adopt/evolve workflow without making the skill a canonical owner.
 
 Project behavior must still be owned outside the skill.

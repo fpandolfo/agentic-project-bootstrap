@@ -14,6 +14,9 @@ A clean-context agent should not need to read the entire repository.
 - Link to owners instead of repeating decisions.
 - Do not use chat history as the only owner of a decision.
 - Treat tests as executable documentation.
+- Keep observed facts, inferences, proposals and accepted decisions distinct.
+- Use `START_HERE.md` and `CAPABILITIES.md` for progressive disclosure instead
+  of asking an agent to load the full suite.
 - Add generated lookup/report surfaces only after enough complexity exists to justify them.
 
 ## When to create a new doc owner
