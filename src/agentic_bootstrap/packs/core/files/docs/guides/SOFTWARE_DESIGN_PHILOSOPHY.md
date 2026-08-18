@@ -50,6 +50,37 @@ internal workflow states unless those are part of the caller's real contract.
 Repeated conditionals, duplicated configuration and synchronized edits across
 unrelated surfaces are signals that information has leaked.
 
+Access control is not sufficient evidence of information hiding. A private field
+can still leak its design knowledge through getters, setters, exposed internal
+data shapes, required call sequences or multiple modules that independently
+understand the same rule. Look for knowledge that must change together even when
+no public signature exposes it.
+
+### Organize around knowledge, not time
+
+Question **temporal decomposition**: splitting a capability into modules merely
+because their operations happen at different times. A read, parse, transform and
+write sequence may look orderly while forcing several modules to understand the
+same format, state transition or policy. The result is information leakage and
+modules that are independent in name only.
+
+Methods or modules are **conjoined** when callers must invoke them in a particular
+order, or when they must routinely be understood, tested or changed together
+because they share hidden knowledge. Prefer boundaries around the knowledge and
+decisions a module owns, not around the chronological steps in one execution.
+
+When conjoined boundaries appear, compare at least these remedies:
+
+1. merge closely related parts into one deeper owner that performs the complete
+   operation behind a smaller interface;
+2. extract the shared knowledge into a dedicated owner only if it can hide the
+   details behind a meaningfully simpler interface.
+
+Do not replace implicit coupling with a shallow coordinator that republishes the
+same knowledge. A staged pipeline remains reasonable when stages own genuinely
+different information, communicate through stable contracts and can be changed
+or reused independently.
+
 ### Keep layers at different abstractions
 
 Every layer should contribute a distinct responsibility. A controller, service,
@@ -86,13 +117,15 @@ line or become a second implementation.
 Before meaningful implementation or refactoring, the agent should:
 
 1. identify the current owner and interface of the affected behavior;
-2. name the complexity the proposed design should hide;
-3. check whether the change increases cognitive load or change amplification;
-4. compare alternatives for consequential boundaries;
-5. prefer making an existing module deeper when it already owns the concept;
-6. avoid adding pass-through layers, generic buckets or parallel sources of truth;
-7. design validation around the public behavior of the boundary;
-8. record a trade-off when a tactical shortcut is intentionally accepted.
+2. name the knowledge, decisions and complexity the proposed design should hide;
+3. check whether shared knowledge leaks across public or private boundaries;
+4. reject chronological splits whose parts must be called or changed together;
+5. check whether the change increases cognitive load or change amplification;
+6. compare alternatives for consequential boundaries;
+7. prefer making an existing module deeper when it already owns the concept;
+8. avoid adding pass-through layers, generic buckets or parallel sources of truth;
+9. design validation around the public behavior of the boundary;
+10. record a trade-off when a tactical shortcut is intentionally accepted.
 
 The agent must not claim a design is good merely because it uses a familiar
 pattern, has many layers, reduces line count or was generated consistently.
@@ -116,6 +149,11 @@ Question the design when:
 - a simple feature requires synchronized edits across many owners;
 - a new layer has almost the same interface as the layer below it;
 - callers repeat knowledge that should be internal to a module;
+- private modules duplicate a format, policy or state transition without an
+  explicit shared contract;
+- sequential methods or classes must always be called, tested or changed together;
+- module boundaries mirror execution order even though the stages share the same
+  knowledge;
 - a generic `utils`, `helpers`, `common` or `manager` surface accumulates unrelated
   responsibilities;
 - internal data structures escape into many consumers;
