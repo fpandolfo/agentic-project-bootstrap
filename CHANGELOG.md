@@ -4,6 +4,11 @@ All notable changes are documented here.
 
 ## Unreleased
 
+### Added
+
+- explicit temporal-decomposition and conjoined-module guardrails that organize
+  boundaries around owned knowledge rather than execution order.
+
 ## 0.2.0-alpha.3 — 2026-08-18
 
 ### Added

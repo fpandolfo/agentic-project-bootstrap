@@ -23,7 +23,22 @@ inspired by John Ousterhout's *A Philosophy of Software Design* and routes to
 - [ ] Does one owner contain each durable decision?
 - [ ] Are storage, provider, transport and configuration details kept internal?
 - [ ] Are callers free from duplicated conditionals or synchronized knowledge?
+- [ ] Does private knowledge stay hidden from getters, data shapes and required
+      call sequences as well as from public signatures?
 - [ ] Did we avoid a new generic bucket with unrelated responsibilities?
+
+## Temporal decomposition
+
+- [ ] Are boundaries organized around owned knowledge rather than only execution
+      order?
+- [ ] Can each stage change without another stage needing the same hidden rule?
+- [ ] Are any methods, classes or documents always called, tested or changed
+      together because they are artificially separated?
+- [ ] Would merging them create a deeper owner with a smaller interface?
+- [ ] If shared knowledge was extracted, does the new owner hide it rather than
+      republish it through a shallow interface?
+- [ ] If a staged pipeline remains, do its stages own different information and
+      communicate through stable contracts?
 
 ## Strategic design
 
