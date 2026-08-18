@@ -23,6 +23,14 @@ def main() -> int:
     if rc:
         return rc
 
+    rc = run([sys.executable, "tools/obvious_system_check.py"], root)
+    if rc:
+        return rc
+
+    rc = run([sys.executable, "tools/privacy_scan.py"], root)
+    if rc:
+        return rc
+
     if not (root / ".git").exists():
         print("\nNo .git directory found. Skipping git checks.")
         print("Status: PASSED (context only)")

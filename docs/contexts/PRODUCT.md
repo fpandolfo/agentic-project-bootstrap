@@ -30,6 +30,9 @@ leaves durable project truth that another clean-context agent can resume.
 - guided generation of contexts, Mermaid diagrams and ADRs;
 - player-agnostic canonical owners;
 - optional deterministic plan/apply/verify tooling;
+- sanitized real-project evidence with explicit privacy and evidence boundaries;
+- explicit software-design guardrails inspired by John Ousterhout's
+  *A Philosophy of Software Design*;
 - public contribution and security baseline.
 
 ## Non-goals
@@ -49,3 +52,11 @@ leaves durable project truth that another clean-context agent can resume.
 The pack teaches an agent how to find its way and offer well-supported options.
 Execution can be agentic; product intent, business rules, material risk and
 acceptance remain human-owned.
+
+Case studies prove that the guidance has roots in substantial delivery. They do
+not promise a particular product outcome, expose consumer implementations or
+turn one project's architecture into a universal answer.
+
+The pack treats low cognitive load, low change amplification, information hiding
+and deep modules with small interfaces as default design heuristics. They guide
+agent proposals; they do not silently become product or architecture decisions.

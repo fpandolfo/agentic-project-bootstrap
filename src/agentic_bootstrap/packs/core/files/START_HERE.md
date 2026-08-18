@@ -62,6 +62,8 @@ Do **not** read the full suite by default.
 - Available tools, templates and outputs: `CAPABILITIES.md`
 - Copy/paste activation prompts: `PROMPTS.md`
 - Durable context rules: `docs/ops/CONTEXT_GOVERNANCE.md`
+- Meaningful implementation/refactoring: `docs/guides/SOFTWARE_DESIGN_PHILOSOPHY.md`
+- Available and candidate tooling: `TOOLING.md`
 - Player-specific integration: `docs/ops/AGENT_ADAPTERS.md`
 
 ## Human ownership

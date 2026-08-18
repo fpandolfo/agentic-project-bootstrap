@@ -48,6 +48,13 @@ who want reviewed file application; it is not required for agent-led adoption.
 4. `docs/ops/AGENT_FIRST_ONBOARDING.md`
 5. discovery tests
 
+### Meaningful implementation, architecture or refactoring
+
+1. `docs/guides/SOFTWARE_DESIGN_PHILOSOPHY.md`
+2. `docs/checklists/SOFTWARE_DESIGN.md`
+3. affected architecture/context owner
+4. nearby code and tests
+
 ### Packs, templates or player adapters
 
 1. `docs/ops/AGENT_ADAPTERS.md`
@@ -82,6 +89,8 @@ who want reviewed file application; it is not required for agent-led adoption.
 - Quality commands are argv arrays and run only after an explicit flag.
 - Packs contain text files only until a versioned binary-asset contract exists.
 - Durable project truth lives outside player adapters.
+- New boundaries should hide meaningful complexity behind small interfaces;
+  shallow wrappers and duplicated owners require explicit justification.
 
 ## Security rules
 

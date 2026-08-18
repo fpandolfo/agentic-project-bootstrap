@@ -11,6 +11,8 @@ Use for meaningful, risky or cross-cutting work.
 
 ## Ownership / architecture
 
+Use `docs/checklists/SOFTWARE_DESIGN.md` for a deeper design review.
+
 - [ ] Which file/module owns the rule?
 - [ ] Am I creating a second owner?
 - [ ] Does this increase change amplification?

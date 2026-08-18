@@ -28,13 +28,30 @@ Any capable agent starts at `START_HERE.md`, uses content-free structural
 discovery and reads only the relevant playbook. Installation is optional. The
 CLI remains available for deterministic, reviewable file application.
 
+The public foundation also includes sanitized real-project case studies, an
+end-to-end delivery lifecycle and a private-to-public learning policy. These
+artifacts expose reusable decisions and validation patterns without copying
+consumer products.
+
+Meaningful implementation and refactoring are also guided by an explicit
+software-design philosophy inspired by John Ousterhout, with a portable review
+skill, checklist and obvious-system advisory.
+
 ## Deliberately deferred
 
 - automatic upgrades and rollback;
 - third-party pack installation and trust policy;
 - stack-specific guidance packs;
 - release archive automation;
-- case-study site and media;
+- case-study media production and presentation site;
 - automatic merge of user-modified managed files.
 
 These become independent GitHub Issues rather than hidden alpha promises.
+
+## Release-candidate boundary
+
+Version `0.2.0-alpha.3` is intended for public review and clean-agent pilots.
+Files applied to a consumer become consumer-owned; this release does not offer
+automatic upgrade, deletion or rollback. Distribution smoke tests cover wheel
+and source archives, while SBOM/provenance and the stable upgrade contract remain
+explicit release issues.

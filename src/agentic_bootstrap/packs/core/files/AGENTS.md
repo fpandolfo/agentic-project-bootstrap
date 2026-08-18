@@ -70,8 +70,10 @@ A workflow can recommend reasoning effort; it does not change the player/model s
 
 1. relevant product/context owner
 2. `docs/contexts/ARCHITECTURE.md`
-3. `docs/contexts/STACK.md`
-4. nearby code/tests
+3. `docs/guides/SOFTWARE_DESIGN_PHILOSOPHY.md`
+4. `docs/checklists/SOFTWARE_DESIGN.md`
+5. `docs/contexts/STACK.md`
+6. nearby code/tests
 
 ### Bug / investigation
 
@@ -99,12 +101,18 @@ A workflow can recommend reasoning effort; it does not change the player/model s
 
 Optimize for low cognitive load, low change amplification, explicit ownership, discoverable dependencies and deep modules with narrow interfaces.
 
+This discipline explicitly draws on John Ousterhout's *A Philosophy of Software
+Design*. The canonical application and attribution live in
+`docs/guides/SOFTWARE_DESIGN_PHILOSOPHY.md`.
+
 - Every durable decision should have one clear canonical owner.
 - Entrypoint docs should route, not duplicate deep owners.
 - If a simple change requires touching many surfaces, re-check ownership.
 - Make important unknowns explicit as a doc, test, blocked action or work item.
 - Prefer predictable deep solutions over clever shallow wrappers.
 - Split around stable concepts and information hiding, not file length.
+- Compare plausible designs for consequential boundaries and name any accepted
+  tactical shortcut with its residual risk.
 
 ## Durable rules vs player adapters
 

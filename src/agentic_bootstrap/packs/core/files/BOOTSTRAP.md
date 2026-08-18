@@ -64,6 +64,8 @@ At minimum define problem/outcome, hypothesis when relevant, MVP, non-goals, hap
 
 Only after the slice is understood:
 
+- read `docs/guides/SOFTWARE_DESIGN_PHILOSOPHY.md` and use
+  `docs/checklists/SOFTWARE_DESIGN.md`;
 - prefer deep modules with narrow interfaces;
 - avoid duplicate owners;
 - add tests closest to actual risk;

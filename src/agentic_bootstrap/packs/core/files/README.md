@@ -39,6 +39,14 @@ No CLI installation is required to start. `tools/discover_project.py` provides a
 safe structural inventory. The optional `agentic` CLI can later apply reviewed
 packs through a fingerprinted plan when that control is useful.
 
+Meaningful implementation and refactoring follow the explicit guidance in
+`docs/guides/SOFTWARE_DESIGN_PHILOSOPHY.md`, inspired by John Ousterhout's
+*A Philosophy of Software Design*. The aim is low cognitive load, information
+hiding and deep modules with small interfaces, not ceremony or layer count.
+
+`TOOLING.md` distinguishes tools that actually ship from case-study evidence and
+future extraction candidates.
+
 ## Current bootstrap assumptions
 
 - Project name: `{{PROJECT_NAME}}`
@@ -54,3 +62,10 @@ python tools/prepare_delivery.py
 ```
 
 Project-specific build/test/lint commands belong in `docs/contexts/QUALITY.md`.
+
+## Bootstrap ownership
+
+Once generated, these files belong to this project. Upstream bootstrap changes
+are proposals, not automatic updates. The alpha never silently overwrites local
+decisions or removes obsolete managed files; review and approve any future
+adoption explicitly.

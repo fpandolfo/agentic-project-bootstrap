@@ -18,9 +18,11 @@ makes future agent-assisted work safer and easier to resume.
 6. Ask the human for product purpose, priorities and business rules that the
    repository cannot prove.
 7. Map major components, dependencies, data and critical user/system flows.
-8. Propose a staged context plan; explain the value of every new artifact.
-9. Use explicit preservation when an installer would collide with existing files.
-10. Validate that no behavior changed during the adoption-only pass.
+8. Identify high cognitive load, change amplification, shallow pass-through
+   boundaries and leaked decisions as observations, not automatic refactor scope.
+9. Propose a staged context plan; explain the value of every new artifact.
+10. Use explicit preservation when an installer would collide with existing files.
+11. Validate that no behavior changed during the adoption-only pass.
 
 ## Discovery brief
 

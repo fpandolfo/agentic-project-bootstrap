@@ -52,6 +52,19 @@ Create an ADR when a decision has meaningful alternatives, long-lived
 consequences, migration cost, security impact or cross-cutting ownership.
 Do not create ADRs for routine implementation details.
 
+## Software design discipline
+
+For meaningful implementation, architecture or refactoring, use
+`docs/guides/SOFTWARE_DESIGN_PHILOSOPHY.md` and
+`docs/checklists/SOFTWARE_DESIGN.md`.
+
+The guidance explicitly applies ideas from John Ousterhout's *A Philosophy of
+Software Design*: reduce cognitive load and change amplification, prefer deep
+modules with small interfaces, hide information, keep layers at distinct
+abstractions and invest strategically where complexity is real. These are
+design heuristics, not permission for speculative frameworks or a substitute
+for human architecture decisions.
+
 ## Delivery
 
 For meaningful behavior, map:
@@ -63,6 +76,22 @@ MAP -> IMPLEMENT -> VALIDATE -> CLOSE
 Capture outcome, scope, non-goals, happy path, unhappy path, relevant edge cases,
 owners, risks, human gates and validation before broad implementation.
 
+For an end-to-end reference from product framing through release and learning,
+read `docs/guides/AGENTIC_DELIVERY_LIFECYCLE.md`. Its validation ladder helps
+separate deterministic tests, contract checks, visual evidence, integrated
+smoke, environment/device validation and production signals.
+
+## Learning from real delivery
+
+`case-studies/` contains sanitized real-project evidence. Use a case to discover
+questions, gates and validation strategies that may fit the current project.
+Never treat a case's architecture or stack as a default decision.
+
+When extracting learning from private or client work, follow
+`docs/guides/REAL_PROJECT_LEARNING.md` and start from
+`docs/templates/CASE_STUDY.md`. Evidence must remain classified as publicly
+reproducible, privately verified, owner-reported or synthetic illustration.
+
 ## Validation and safety
 
 - `tools/context_check.py`: verifies the minimal context structure;
@@ -71,6 +100,13 @@ owners, risks, human gates and validation before broad implementation.
 - `agentic plan/apply/verify`: optional deterministic file application workflow.
 
 Project-specific checks remain owned by `docs/contexts/QUALITY.md`.
+Use `docs/templates/QUALITY_STRATEGY.md` to establish a new project's
+risk-to-evidence map. `docs/guides/CONTEXT_GENERATION_AND_DRIFT.md` explains when
+generated factual maps are justified, and `docs/guides/CI_AND_DELIVERY_GATES.md`
+keeps remote pipelines aligned with local project-owned commands.
+
+`TOOLING.md` is the canonical catalog of tools that are available, guidance-only,
+candidate for neutral extraction or intentionally local to a consumer.
 
 ## Optional adapters
 

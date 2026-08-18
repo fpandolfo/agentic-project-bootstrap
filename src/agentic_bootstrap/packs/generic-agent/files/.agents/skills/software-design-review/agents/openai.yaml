@@ -1,0 +1,4 @@
+interface:
+  display_name: "Software Design Review"
+  short_description: "Review module depth and cognitive load"
+  default_prompt: "Use $software-design-review to review this design for complexity, information hiding, and module depth."

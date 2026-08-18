@@ -8,7 +8,9 @@ Player-specific skills, steering and subagents are **adapters**.
 
 Durable rules must not live only inside `.agents/skills/`, `.codex/agents/`, `.kiro/steering/`, `.kiro/skills/` or chat history.
 
-`START_HERE.md` is the universal player-independent activation contract.
+`START_HERE.md` is the universal player-independent activation contract. An
+adapter may point to it or improve ergonomics, but must not redefine the core
+workflow privately.
 
 Durable owners belong in:
 
@@ -28,9 +30,9 @@ Durable owners belong in:
 - If another player enters, add a parallel adapter rather than moving durable truth into that player.
 - Remove an adapter when it creates more drift than leverage.
 
-## Optional Codex pack
+## Codex
 
-When the `codex` pack is selected, it adds these read-only specialists:
+Included read-only specialists:
 
 - `repo-explorer`;
 - `delivery-reviewer`;
@@ -39,9 +41,9 @@ When the `codex` pack is selected, it adds these read-only specialists:
 
 They are advisory specialists, not canonical owners.
 
-## Optional Kiro pack
+## Kiro
 
-When the `kiro` pack is selected, it follows these conventions:
+Current conventions used by this bootstrap:
 
 - root `AGENTS.md` is supported;
 - persistent steering lives under `.kiro/steering/`;
@@ -56,5 +58,10 @@ Kiro files remain thin and route back to canonical repository owners.
 
 The `agent-first-bootstrap` skill routes supported players into the universal
 new/adopt/evolve workflow without making the skill a canonical owner.
+
+The `software-design-review` skill activates the Ousterhout-inspired design
+review at meaningful module and architecture boundaries. Its durable owner is
+`docs/guides/SOFTWARE_DESIGN_PHILOSOPHY.md`; the skill must remain a concise
+adapter.
 
 Project behavior must still be owned outside the skill.

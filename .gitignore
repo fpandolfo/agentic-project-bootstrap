@@ -23,3 +23,4 @@ tmp/
 .failures/
 agentic-plan.json
 *.agentic-plan.json
+local_last_session.txt

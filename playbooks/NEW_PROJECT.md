@@ -15,12 +15,15 @@ Turn human intent into an approved, minimal and reversible project foundation.
 4. Propose MVP, non-goals, happy path, unhappy path and relevant edge cases.
 5. Present architecture and stack options with tradeoffs. Do not select merely
    because one option is familiar to the agent.
-6. Propose only useful diagrams and ADR candidates.
-7. Define the smallest evidence that would validate the first slice.
-8. Ask for approval on product behavior, stack/architecture, privacy/security,
+6. For consequential boundaries, compare plausible designs using
+   `docs/guides/SOFTWARE_DESIGN_PHILOSOPHY.md`; prefer small interfaces that hide
+   real complexity without inventing speculative layers.
+7. Propose only useful diagrams and ADR candidates.
+8. Define the smallest evidence that would validate the first slice.
+9. Ask for approval on product behavior, stack/architecture, privacy/security,
    external services, irreversible setup and delivery authority.
-9. Generate the approved minimal context and first work slice.
-10. Implement only when explicitly requested or when implementation is part of
+10. Generate the approved minimal context and first work slice.
+11. Implement only when explicitly requested or when implementation is part of
     the approved task.
 
 ## Suggested initial artifacts
