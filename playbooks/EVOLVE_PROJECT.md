@@ -14,11 +14,13 @@ context and decisions aligned.
 2. Read the minimum canonical owners routed by `docs/PROJECT_INDEX.md`.
 3. Map the slice: MVP, non-goals, happy path, unhappy path, relevant edge cases,
    dependencies, owners, risks and validation.
-4. Identify decisions that require human input before implementation.
-5. Implement within the approved boundary.
-6. Run focused checks, then broader checks proportional to blast radius.
-7. Update canonical context, diagrams or ADRs only when durable truth changed.
-8. Close with evidence, intentional non-goals, residual risks and follow-ups.
+4. Apply `docs/checklists/SOFTWARE_DESIGN.md`: identify the complexity to hide,
+   test whether an existing owner can become deeper and reject shallow layers.
+5. Identify decisions that require human input before implementation.
+6. Implement within the approved boundary.
+7. Run focused checks, then broader checks proportional to blast radius.
+8. Update canonical context, diagrams or ADRs only when durable truth changed.
+9. Close with evidence, intentional non-goals, residual risks and follow-ups.
 
 ## Diagram and ADR triggers
 

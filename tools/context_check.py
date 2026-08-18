@@ -14,6 +14,7 @@ from agentic_bootstrap.packs import discover_packs  # noqa: E402
 REQUIRED = [
     "START_HERE.md",
     "CAPABILITIES.md",
+    "TOOLING.md",
     "PROMPTS.md",
     "AGENTS.md",
     "README.md",
@@ -28,10 +29,23 @@ REQUIRED = [
     "docs/contexts/ARCHITECTURE.md",
     "docs/contexts/STACK.md",
     "docs/contexts/QUALITY.md",
+    "docs/guides/SOFTWARE_DESIGN_PHILOSOPHY.md",
+    "docs/guides/AGENTIC_DELIVERY_LIFECYCLE.md",
+    "docs/guides/CI_AND_DELIVERY_GATES.md",
+    "docs/guides/CONTEXT_GENERATION_AND_DRIFT.md",
+    "docs/guides/REAL_PROJECT_LEARNING.md",
+    "docs/checklists/SOFTWARE_DESIGN.md",
+    "docs/templates/CASE_STUDY.md",
+    "docs/templates/QUALITY_STRATEGY.md",
+    "case-studies/README.md",
+    "case-studies/project-aurora/README.md",
+    "case-studies/project-relay/README.md",
     "docs/ops/AGENT_FIRST_ONBOARDING.md",
     "playbooks/NEW_PROJECT.md",
     "playbooks/ADOPT_PROJECT.md",
     "playbooks/EVOLVE_PROJECT.md",
+    "tools/obvious_system_check.py",
+    "tools/release_smoke.py",
 ]
 TOKEN_RE = re.compile(r"\{\{[A-Z0-9_]+\}\}")
 

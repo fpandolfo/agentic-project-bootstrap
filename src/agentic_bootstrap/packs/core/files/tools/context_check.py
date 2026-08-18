@@ -8,6 +8,7 @@ from pathlib import Path
 REQUIRED = [
     "START_HERE.md",
     "CAPABILITIES.md",
+    "TOOLING.md",
     "PROMPTS.md",
     "AGENTS.md",
     "README.md",
@@ -16,14 +17,27 @@ REQUIRED = [
     "docs/contexts/STACK.md",
     "docs/contexts/ARCHITECTURE.md",
     "docs/contexts/QUALITY.md",
+    "docs/guides/SOFTWARE_DESIGN_PHILOSOPHY.md",
+    "docs/guides/AGENTIC_DELIVERY_LIFECYCLE.md",
+    "docs/guides/CI_AND_DELIVERY_GATES.md",
+    "docs/guides/CONTEXT_GENERATION_AND_DRIFT.md",
+    "docs/guides/REAL_PROJECT_LEARNING.md",
     "docs/ops/DELIVERY_WORKFLOW.md",
     "docs/ops/CONTEXT_GOVERNANCE.md",
     "docs/ops/AGENT_ADAPTERS.md",
     "docs/ops/AGENT_FIRST_ONBOARDING.md",
     "docs/checklists/CHANGE_IMPACT.md",
+    "docs/checklists/SOFTWARE_DESIGN.md",
+    "docs/templates/CASE_STUDY.md",
+    "docs/templates/QUALITY_STRATEGY.md",
+    "case-studies/README.md",
+    "case-studies/project-aurora/README.md",
+    "case-studies/project-relay/README.md",
     "playbooks/NEW_PROJECT.md",
     "playbooks/ADOPT_PROJECT.md",
     "playbooks/EVOLVE_PROJECT.md",
+    "tools/obvious_system_check.py",
+    "tools/privacy_scan.py",
 ]
 
 TOKEN_RE = re.compile(r"\{\{[A-Z0-9_]+\}\}")
@@ -43,7 +57,7 @@ def main() -> int:
 
     if (root / "AGENTS.md").exists():
         text = (root / "AGENTS.md").read_text(encoding="utf-8")
-        for ref in ("START_HERE.md", "docs/PROJECT_INDEX.md", "docs/ops/AGENT_ADAPTERS.md", "tools/context_check.py"):
+        for ref in ("START_HERE.md", "docs/PROJECT_INDEX.md", "docs/guides/SOFTWARE_DESIGN_PHILOSOPHY.md", "docs/ops/AGENT_ADAPTERS.md", "tools/context_check.py"):
             if ref not in text:
                 failures.append(f"AGENTS.md does not reference {ref}")
 

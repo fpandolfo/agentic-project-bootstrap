@@ -4,6 +4,8 @@ import contextlib
 import io
 import json
 import os
+import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -43,11 +45,18 @@ class BootstrapEndToEndTest(unittest.TestCase):
         self.assertTrue((self.target / "AGENTS.md").is_file())
         self.assertTrue((self.target / "START_HERE.md").is_file())
         self.assertTrue((self.target / "CAPABILITIES.md").is_file())
+        self.assertTrue((self.target / "TOOLING.md").is_file())
         self.assertTrue((self.target / "PROMPTS.md").is_file())
         self.assertTrue((self.target / "playbooks/ADOPT_PROJECT.md").is_file())
         self.assertTrue((self.target / "tools/discover_project.py").is_file())
         self.assertTrue((self.target / "docs/templates/ARCHITECTURE_DIAGRAMS.md").is_file())
+        self.assertTrue((self.target / "docs/guides/SOFTWARE_DESIGN_PHILOSOPHY.md").is_file())
+        self.assertTrue((self.target / "docs/checklists/SOFTWARE_DESIGN.md").is_file())
+        self.assertTrue((self.target / "tools/obvious_system_check.py").is_file())
+        self.assertTrue((self.target / "tools/privacy_scan.py").is_file())
+        self.assertTrue((self.target / "case-studies/project-relay/README.md").is_file())
         self.assertTrue((self.target / ".agents/skills/context-governance/SKILL.md").is_file())
+        self.assertTrue((self.target / ".agents/skills/software-design-review/SKILL.md").is_file())
         self.assertTrue((self.target / ".github/workflows/agentic-bootstrap.yml").is_file())
         self.assertFalse((self.target / ".kiro").exists())
         self.assertFalse((self.target / ".codex").exists())
@@ -55,6 +64,15 @@ class BootstrapEndToEndTest(unittest.TestCase):
         result = verify_target(self.target)
         self.assertEqual(result["status"], "passed", result)
         self.assertEqual(result["failures"], [])
+
+        delivery = subprocess.run(
+            [sys.executable, "tools/prepare_delivery.py"],
+            cwd=self.target,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        self.assertEqual(delivery.returncode, 0, delivery.stdout + delivery.stderr)
 
     def test_existing_unmanaged_file_is_a_conflict(self) -> None:
         self.target.mkdir()

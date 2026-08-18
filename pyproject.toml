@@ -1,20 +1,20 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "agentic-project-bootstrap"
-version = "0.2.0a2"
+version = "0.2.0a3"
 description = "Portable, player-agnostic guidance pack for disciplined agentic projects"
 readme = "README.md"
 requires-python = ">=3.11"
-license = { file = "LICENSE" }
+license = "Apache-2.0"
+license-files = ["LICENSE"]
 authors = [{ name = "Agentic Project Bootstrap contributors" }]
 keywords = ["agentic-development", "ai-agents", "developer-tools", "bootstrap"]
 classifiers = [
   "Development Status :: 3 - Alpha",
   "Environment :: Console",
-  "License :: OSI Approved :: Apache Software License",
   "Operating System :: OS Independent",
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3.11",
@@ -37,10 +37,12 @@ agentic_bootstrap = [
   "packs/*/pack.json",
   "packs/core/files/.gitignore",
   "packs/core/files/*.md",
+  "packs/core/files/case-studies/**/*.md",
   "packs/core/files/playbooks/*.md",
   "packs/core/files/docs/**/*.md",
   "packs/core/files/tools/*.py",
   "packs/generic-agent/files/.agents/skills/*/SKILL.md",
+  "packs/generic-agent/files/.agents/skills/*/agents/*.yaml",
   "packs/codex/files/.codex/agents/*.toml",
   "packs/kiro/files/.kiro/skills/*/SKILL.md",
   "packs/kiro/files/.kiro/steering/*.md",
@@ -48,6 +50,9 @@ agentic_bootstrap = [
   "packs/github/files/.github/pull_request_template.md",
   "packs/github/files/.github/workflows/*.yml",
 ]
+
+[tool.setuptools.exclude-package-data]
+agentic_bootstrap = ["**/__pycache__/*", "**/*.pyc"]
 
 [tool.unittest]
 start-directory = "tests"

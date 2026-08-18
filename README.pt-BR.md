@@ -9,7 +9,7 @@ pack portátil de orientação: ajuda o agente a encontrar evidências, fazer bo
 perguntas, propor opções e preservar contexto durável. O humano continua sendo
 o responsável pelo produto e pelas decisões.
 
-> Estado: `0.2.0-alpha.2`. O onboarding agent-first e o discovery read-only já
+> Estado: release candidate `0.2.0-alpha.3`. O onboarding agent-first e o discovery read-only já
 > são funcionais; os contratos de extensão e aplicação ainda estão evoluindo.
 
 ## Comece com um prompt
@@ -30,6 +30,11 @@ minha aprovação.
 
 Para uma ideia nova, use `NEW_PROJECT` e descreva o resultado desejado. Há mais
 exemplos em [PROMPTS.md](PROMPTS.md).
+
+A orientação legível diretamente no repositório é o produto principal e não
+exige instalação. As releases também incluem um wheel Python para a CLI
+opcional; use o wheel anexado à release correspondente e confira o checksum
+publicado antes de instalar.
 
 ## Como funciona
 
@@ -82,6 +87,33 @@ cache e build. Candidatos sensíveis são informados somente pelo caminho.
 
 Templates são pontos de partida, não uma obrigação de gerar todos os documentos.
 
+## Evidências de entregas reais
+
+A [biblioteca de cases](case-studies/) extrai processo reutilizável de entregas
+privadas bem-sucedidas sem publicar identidade, domínio de negócio, dados,
+infraestrutura ou histórico dos repositórios de origem.
+
+- **Project Relay** aborda um produto Flutter e Kotlin/Spring conduzido por
+  agentes, com contratos, CI, containers, regressão visual e validação em device.
+- **Project Aurora** aborda um site comercial conduzido por agentes, do discovery
+  e direção visual até produção, indexação e handoff.
+
+Os nomes e cenários são fictícios. Cada case diferencia evidência verificada em
+fonte privada, resultado relatado pelo owner e ilustração sintética. A fronteira
+de publicação está em
+[Learning From Real Projects](docs/guides/REAL_PROJECT_LEARNING.md).
+
+## Filosofia de design
+
+O método aplica explicitamente ideias de John Ousterhout em *A Philosophy of
+Software Design*. Os agentes são orientados a reduzir carga cognitiva e
+amplificação de mudanças, esconder informação, preferir módulos profundos com
+interfaces pequenas e evitar wrappers rasos ou owners duplicados. Consulte a
+[filosofia de design](docs/guides/SOFTWARE_DESIGN_PHILOSOPHY.md).
+
+Esta é uma aplicação prática das ideias do livro à entrega conduzida por agentes,
+sem alegação de afiliação ou endosso do autor.
+
 ## Papéis
 
 ```text
@@ -91,6 +123,14 @@ Repositório: verdade canônica, decisões, guardrails e memória durável
 ```
 
 Uma proposta do agente não é decisão final.
+
+## Ownership e upgrades na alpha
+
+Depois da adoção, os arquivos gerados pertencem ao repositório consumidor. Esta
+alpha não atualiza, remove nem reverte esses arquivos automaticamente. Um novo
+planejamento classifica modificações locais e conflitos, mas não funciona como
+um force-update oculto. Trate mudanças upstream como propostas e adote somente
+o que o owner do projeto aprovar.
 
 ## CLI opcional
 

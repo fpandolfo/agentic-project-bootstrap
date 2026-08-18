@@ -21,5 +21,20 @@ evoluir um projeto sem amarrá-lo a um player ou stack específica.
 O pack é orientação, não decisão final. Crie somente contextos, diagramas, ADRs
 e tooling que resolvam uma necessidade real do projeto.
 
+Implementações e refactors relevantes devem consultar
+`docs/guides/SOFTWARE_DESIGN_PHILOSOPHY.md`, que aplica explicitamente ideias de
+John Ousterhout em *A Philosophy of Software Design*: baixa carga cognitiva,
+information hiding e módulos profundos com interfaces pequenas.
+
+`TOOLING.md` diferencia ferramentas realmente disponíveis de evidências dos
+cases e candidatos futuros de extração.
+
 Players específicos podem usar adapters, skills ou subagents opcionais. A
 verdade durável continua nos owners canônicos do repositório.
+
+## Ownership do bootstrap
+
+Depois de gerados, estes arquivos pertencem ao projeto. Mudanças upstream do
+bootstrap são propostas, não atualizações automáticas. A alpha nunca sobrescreve
+silenciosamente decisões locais nem remove arquivos gerenciados obsoletos;
+qualquer adoção futura deve ser revisada e aprovada explicitamente.

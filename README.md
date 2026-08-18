@@ -8,7 +8,7 @@ portable guidance pack: it helps an agent find evidence, ask better questions,
 propose useful options and preserve durable project context. The human remains
 the product owner and decision authority.
 
-> Status: `0.2.0-alpha.2`. Agent-first onboarding and read-only discovery are
+> Status: `0.2.0-alpha.3` release candidate. Agent-first onboarding and read-only discovery are
 > functional; guidance and optional pack/application contracts are still evolving.
 
 [Leia em português](README.pt-BR.md)
@@ -30,6 +30,11 @@ contexts, diagrams, ADRs, tooling and delivery plan for my approval.
 
 For a new idea, replace `ADOPT_PROJECT` with `NEW_PROJECT` and describe the
 desired outcome. More prompts are available in [PROMPTS.md](PROMPTS.md).
+
+The repository-readable guidance is the primary product and needs no install.
+Release artifacts also include a pure-Python wheel for the optional CLI; use the
+wheel attached to the matching GitHub release and verify its published checksum
+before installation.
 
 ## How it works
 
@@ -96,6 +101,34 @@ See [playbooks/](playbooks/) for the exact sequences.
 Templates live under [docs/templates/](docs/templates/). They are starting points,
 not a requirement to create every document.
 
+## Evidence from real delivery
+
+The [case-study library](case-studies/) distills reusable process from successful
+private delivery without publishing consumer identity, domain code, data,
+infrastructure or repository history.
+
+- **Project Relay** covers an agent-led Flutter and Kotlin/Spring product with
+  contracts, CI, containers, focused visual regression and device validation.
+- **Project Aurora** covers an agent-led commercial website from discovery and
+  visual direction through production publication, search indexing and handoff.
+
+The names and scenarios are fictionalized. Each case labels privately verified,
+owner-reported and synthetic evidence so examples do not become stronger claims
+than their source permits. See
+[Learning From Real Projects](docs/guides/REAL_PROJECT_LEARNING.md) for the
+publication boundary.
+
+## Design philosophy
+
+The delivery method explicitly draws on John Ousterhout's *A Philosophy of
+Software Design*. Agents are guided to reduce cognitive load and change
+amplification, hide information, prefer deep modules with small interfaces and
+avoid shallow wrappers or duplicated owners. See the
+[software design philosophy](docs/guides/SOFTWARE_DESIGN_PHILOSOPHY.md).
+
+This is a practical application of the book's ideas to agent-led delivery, not a
+claim of affiliation or endorsement.
+
 ## Human and agent roles
 
 ```text
@@ -120,6 +153,14 @@ It is optional plumbing, not the onboarding experience. See
 [docs/contexts/ARCHITECTURE.md](docs/contexts/ARCHITECTURE.md) and run
 `python3 agentic.py --help` when this control is useful.
 
+## Alpha ownership and upgrades
+
+After adoption, generated project files belong to the consumer repository.
+This alpha does not automatically upgrade, remove or roll back those files.
+Replanning classifies local modifications and conflicts, but it is not a hidden
+force-update mechanism. Review upstream guidance as a proposal and adopt only
+the changes the project owner approves.
+
 ## Optional adapters
 
 Built-in packs include the universal core, portable Agent Skills, GitHub
@@ -142,6 +183,8 @@ tests and tooling.
 - Capability menu: [CAPABILITIES.md](CAPABILITIES.md)
 - Copy/paste prompts: [PROMPTS.md](PROMPTS.md)
 - Current state and owners: [docs/PROJECT_INDEX.md](docs/PROJECT_INDEX.md)
+- Available and candidate tools: [TOOLING.md](TOOLING.md)
+- Sanitized delivery evidence: [case-studies/](case-studies/)
 - Contribution: [CONTRIBUTING.md](CONTRIBUTING.md)
 - Security: [SECURITY.md](SECURITY.md)
 

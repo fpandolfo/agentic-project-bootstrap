@@ -51,3 +51,9 @@ removed without changing canonical project ownership.
 Delete, merge or simplify bootstrap surfaces when they stop paying rent.
 
 The objective is not repository symmetry. The objective is an obvious system that a clean-context agent can safely continue.
+
+## Ownership after generation
+
+Generated files become project-owned. Bootstrap provenance explains their
+origin, but it does not grant upstream guidance authority to overwrite local
+intent. Automatic upgrade, rollback and removal are outside the alpha contract.

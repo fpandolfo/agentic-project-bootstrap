@@ -25,6 +25,7 @@ def main() -> int:
     commands = [
         [sys.executable, "tools/sync_agent_first_pack.py"],
         [sys.executable, "tools/context_check.py"],
+        [sys.executable, "tools/obvious_system_check.py", "--strict"],
         [sys.executable, "tools/privacy_scan.py"],
         [sys.executable, "-m", "compileall", "-q", "src", "tests", "tools", "agentic.py"],
         [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"],

@@ -59,4 +59,9 @@ Kiro files remain thin and route back to canonical repository owners.
 The `agent-first-bootstrap` skill routes supported players into the universal
 new/adopt/evolve workflow without making the skill a canonical owner.
 
+The `software-design-review` skill activates the Ousterhout-inspired design
+review at meaningful module and architecture boundaries. Its durable owner is
+`docs/guides/SOFTWARE_DESIGN_PHILOSOPHY.md`; the skill must remain a concise
+adapter.
+
 Project behavior must still be owned outside the skill.

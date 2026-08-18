@@ -48,6 +48,9 @@ Primary stack:
 | Stack | `docs/contexts/STACK.md` |
 | Architecture | `docs/contexts/ARCHITECTURE.md` |
 | Quality / validation | `docs/contexts/QUALITY.md` |
+| Software design philosophy | `docs/guides/SOFTWARE_DESIGN_PHILOSOPHY.md` |
+| Software design checklist | `docs/checklists/SOFTWARE_DESIGN.md` |
+| Available and candidate tooling | `TOOLING.md` |
 | Delivery workflow | `docs/ops/DELIVERY_WORKFLOW.md` |
 | Context governance | `docs/ops/CONTEXT_GOVERNANCE.md` |
 | Agent/player adapters | `docs/ops/AGENT_ADAPTERS.md` |
@@ -72,8 +75,10 @@ Add domain-specific owners only when a real domain emerges.
 
 ### Technical implementation
 1. `docs/contexts/ARCHITECTURE.md`
-2. `docs/contexts/STACK.md`
-3. relevant code/tests
+2. `docs/guides/SOFTWARE_DESIGN_PHILOSOPHY.md`
+3. `docs/checklists/SOFTWARE_DESIGN.md`
+4. `docs/contexts/STACK.md`
+5. relevant code/tests
 
 ### Risky / cross-cutting
 1. `docs/checklists/CHANGE_IMPACT.md`
