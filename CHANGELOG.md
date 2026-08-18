@@ -28,6 +28,7 @@ All notable changes are documented here.
 - made the software-design philosophy discoverable from onboarding, playbooks,
   generated-project instructions and both sanitized cases.
 - documented alpha ownership, upgrade and release-candidate boundaries.
+- moved release artifact upload to the Node 24-based GitHub Action runtime.
 
 ### Known limitations
 

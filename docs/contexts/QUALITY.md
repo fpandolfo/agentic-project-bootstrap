@@ -51,7 +51,8 @@ Official references checked on 2026-08-18:
 - [Python packaging metadata guidance](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license)
   owns the SPDX license expression and license-file form used by this package;
 - [GitHub upload-artifact](https://github.com/actions/upload-artifact) documents
-  `actions/upload-artifact@v4` for workflow artifacts;
+  `actions/upload-artifact@v7`, which uses the current Node 24 action runtime,
+  for workflow artifacts;
 - publishing, provenance and elevated OIDC permissions remain a separate future
   job so untrusted build steps do not receive release authority, following the
   [PyPA publish action guidance](https://github.com/pypa/gh-action-pypi-publish).
